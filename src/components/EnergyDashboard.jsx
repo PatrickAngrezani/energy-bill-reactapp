@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import EnergyResultsChart from "../components/EnergyResultsChart";
+import EnergyResultsChart from "../pages/EnergyResultsChart";
 
-const Dashboard = () => {
+const EnergyDashboard = () => {
   const [energyData, setEnergyData] = useState({
     timePeriods: [],
     consumption: [],
@@ -46,4 +46,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default EnergyDashboard;

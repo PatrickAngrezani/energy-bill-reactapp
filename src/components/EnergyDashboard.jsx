@@ -17,7 +17,7 @@ const EnergyDashboard = () => {
         },
       })
       .then((response) => {
-        const data = response.data;
+        const data = response.data.energyBills;
 
         const timePeriods = data.map((item) => item.month);
         const consumption = data.map((item) => item.kwhConsuption);

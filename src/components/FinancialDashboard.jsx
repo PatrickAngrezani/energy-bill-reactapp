@@ -17,16 +17,15 @@ const FinancialDashboard = () => {
         },
       })
       .then((response) => {
-        const data = response.data;
-        console.log({ data });
+        const data = response.data.energyBills;
 
         const timePeriods = data.map((item) => item.month);
         const totalValueWithoutGD = data.map(
           (item) => item.totalValueWithoutGD
         );
-        const compensatedEnergyQuantityMoney = data.map((item) => item.compensatedEnergyQuantityMoney);
-
-        console.log({ totalValueWithoutGD, compensatedEnergyQuantityMoney });
+        const compensatedEnergyQuantityMoney = data.map(
+          (item) => item.compensatedEnergyQuantityMoney
+        );
 
         setFinancialData({
           timePeriods,

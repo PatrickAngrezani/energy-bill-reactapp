@@ -13,6 +13,9 @@ const Home = () => {
         <Link to="/financial-dashboard">
           <button>Financial Dashboard</button>
         </Link>
+        <Link to="/invoices-library">
+          <button>Energy Bills Library</button>
+        </Link>
       </div>
     </div>
   );

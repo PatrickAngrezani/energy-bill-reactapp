@@ -1,36 +1,42 @@
 import React from "react";
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Button } from "@mui/material";
 
 const BillTable = ({ bills }) => {
-
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Client Number</th>
-          <th>Month</th>
-          <th>Year</th>
-          <th>Download</th>
-        </tr>
-      </thead>
-      <tbody>
-        {bills.map((bill) => (
-          <tr key={bill.id}>
-            <td>{bill.accountNumber}</td>
-            <td>{bill.month}</td>
-            <td>{bill.year}</td>
-            <td>
-              <a
-                href={`http://localhost:4000/invoice/download?clientNumber=${bill.accountNumber}&month=${bill.month}&year=${bill.year}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Download PDF
-              </a>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <TableContainer component={Paper}>
+      <Table>
+        <TableHead>
+          <TableRow>
+            <TableCell>Nome da UC</TableCell>
+            <TableCell>Número da UC</TableCell>
+            <TableCell>Distribuidora</TableCell>
+            <TableCell>Consumidor</TableCell>
+            <TableCell>Download</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {bills.map((bill) => (
+            <TableRow key={bill.id}>
+              <TableCell>{bill.ucName}</TableCell>
+              <TableCell>{bill.accountNumber}</TableCell>
+              <TableCell>{bill.distributor}</TableCell>
+              <TableCell>{bill.ucName}</TableCell>
+              <TableCell>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={`http://localhost:4000/invoice/download?clientNumber=${bill.accountNumber}&month=${bill.month}&year=${bill.year}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download PDF
+                </Button>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
   );
 };
 

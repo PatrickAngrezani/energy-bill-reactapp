@@ -36,7 +36,7 @@ const EnergyDashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>Energy Dashboard</h1>
+      <h1>Dashboard Energético</h1>
       {energyData ? (
         <EnergyResultsChart data={energyData} />
       ) : (

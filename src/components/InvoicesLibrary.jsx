@@ -14,18 +14,26 @@ const InvoicesLibrary = () => {
 
       setBills(response.data.energyBills);
     } catch (error) {
-      console.error("Error fetching bills:", error);
+      if (error.response && error.response.status === 404) {
+        setBills([]);
+        alert("Nenhuma Fatura foi encontrada!");
+      } else {
+        console.error("Error fetching bills:", error);
+      }
     }
   };
 
   return (
     <div>
-      <h1>Energy Bills Library</h1>
+      <h1>Consulte sua Fatura</h1>
       <SearchBar onSearch={handleSearch} />
       {bills.length > 0 ? (
         <BillTable bills={bills} />
       ) : (
-        <p>No bills found. Please search using the form above.</p>
+        <p>
+          Nenhuma Fatura encontrada. Por favor, pesquise através do formulário
+          acima.
+        </p>
       )}
     </div>
   );

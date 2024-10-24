@@ -40,7 +40,7 @@ const FinancialDashboard = () => {
 
   return (
     <div className="dashboard">
-      <h1>Financial Dashboard</h1>
+      <h1>Dashboard Financeiro</h1>
       {financialData ? (
         <FinancialResultsChart data={financialData} />
       ) : (

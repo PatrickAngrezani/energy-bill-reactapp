@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EnergyResultsChart from "../pages/EnergyResultsChart";
-import { Card, CardContent, Typography, Grid2 } from "@mui/material"; // Importing Material-UI components for the cards
+import { Card, CardContent, Typography, Grid2 } from "@mui/material";
 
 const EnergyDashboard = () => {
   const [energyData, setEnergyData] = useState({
